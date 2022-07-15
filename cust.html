@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>customer</title>
+</head>
+<body bgcolor=#ffddee>
+	<center>
+		<h1>Account Details</h1>
+	<div id="customer"></div><br><br>
+	<a  href="home.html">Home Page</a>
+	</center>
+</body>
+<script type="text/javascript"> 
+	let Amount = 'N'+5000
+	let customerInfo = JSON.parse(localStorage.getItem("REGISTER"));
+	console.log(customerInfo)
+	for (var i = 0; i< customerInfo.length; i++){
+	customer.innerHTML = 
+	'<b>Your First Name -</b> '+" "+ customerInfo[i].firstName+ ' <br>' + 
+	'<b>Your Second Name -</b>' +" "+ customerInfo[i].secondName + ' <br>' +
+	'<b>Your Email -</b>' +" "+ customerInfo[i].accEmail + ' <br>' +
+	'<b>Your Password -</b>' +" "+ customerInfo[i].accPassword + ' <br>' +
+	'<b>Account balance -</b>' +" "+ Amount
+	 }
+	
+</script>
+</html>

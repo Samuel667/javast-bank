@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body bgcolor=#ffddee>
+
+<center>
+<form id="fr" method="post" action="cust.html" >
+	
+<input  type="text" id="accNumber" placeholder=" Enter account number" /><br><br>
+
+<input  type="" id="accPassword" placeholder="Enter account password"/><br><br>
+</form>
+<button type="submit" onclick="submitLogin(window)">click</button><br><br>
+<a href = "home.html">Home page</a>
+</center>
+
+<div id="reveal"></div>
+</body>
+<script type="text/javascript"> 
+	const quest = JSON.parse(localStorage.getItem("REGISTER"));
+	
+	
+	function submitLogin(window){
+		console.log(window)
+	for (var i = 0; i < quest.length; i++) {
+		let an
+	an = quest[i].accountNumber
+	console.log(an)
+	
+	if(accNumber.value == an){
+		console.log('confirm');
+		
+		//console.log(cust)
+
+	let fr =document.getElementsByTagName("form" )[0].action
+	window.fetch(fr) 
+	window.location.assign('C:/Users/mayda/Desktop/Folder/javascript/Bank/cust.html')
+}
+else(reveal.innerHTML="incorrect account number")
+}
+	
+}
+
+</script>
+</html>

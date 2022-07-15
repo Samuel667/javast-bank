@@ -1,0 +1,67 @@
+	<!DOCTYPE html>
+<html>
+<head>
+	<title>REGISTER</title>
+</head>
+<body bgcolor=#ffddee>
+	<center>
+	<input type="text" id="firstName" placeholder="Enter your First Name"/><br><br>
+
+	<input type="text" id="secondName" placeholder="Enter your Second Name"/><br><br>
+
+	<input type="text" id="thirdName" placeholder="Enter your Third Name"/><br><br>
+
+	<input type="email" id="accEmail" placeholder="Enter your Email"/><br><br>
+
+	<input type="password" id="accPassword" placeholder="Enter your Password"/><br><br>
+
+	<input type="submit" id="" value="submit" onclick="submitRegister()"/> <br><br>
+	<a href = "login.html">login here</a>  <a href = "home.html"> Back to Home </a>
+
+	<br><br>
+	<input hidden="block" type="number" id="accountNumber" placeholder="Enter your account number"/>
+
+
+	<div id="showRegister"></div>  <br><br>
+	
+</center>
+
+</body>
+<script type="text/javascript"> 
+ //let ma=Math.floor(Math.random(65434)*10000000000)
+// console.log(ma)
+
+	function submitRegister(){
+		
+allInfo = []
+		const info ={
+			firstName: firstName.value,
+			secondName: secondName.value,
+			thirdName: thirdName.value,
+			accEmail: accEmail.value,
+			accPassword: accPassword.value,
+			accountNumber: Math.floor(Math.random(65434)*10000000000)
+		}
+		allInfo.push({...info})
+	let setStorage = localStorage.setItem("REGISTER",JSON.stringify(allInfo))
+		let savedInfo = JSON.parse(localStorage.getItem("REGISTER"))
+		console.log(savedInfo)
+		  for (var i = 0; i <allInfo.length; i++) {
+		 	let result;
+		 	console.log(allInfo)
+			result= allInfo[i].firstName + ' your account number is ' + allInfo[i].accountNumber;
+			console.log(result) 
+			showRegister.innerHTML+= result
+	}	
+		firstName.value = "",
+		secondName.value = "",
+		thirdName.value = "",
+		accEmail.value = "",
+		accPassword.value = ""		
+	}
+
+
+
+
+</script>
+</html>
